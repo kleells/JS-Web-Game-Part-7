@@ -4,8 +4,41 @@ const pc = newPlayableCharacter(100, 110)
 // Create a non-playable character
 const npc = newNonPlayableCharacter(50, 300)
 
-// have the NPC start walking east immediately
-npc.walkEast()
+async function moveNPC(){
+    await npc.walkNorth(1400)
+    await npc.walkEast(1200)
+    await npc.walkSouth(300)
+    await npc.walkEast(1500)
+    await npc.walkSouth(1500)
+    await npc.walkWest(2700)
+    await npc.walkNorth(400)
+
+}
+
+moveNPC()
+
+// Below, starting code for generator function -WORK IN PROGRESS
+// function* moveNPC(){
+//     yield npc.walkNorth(1400)
+//     yield npc.walkEast(1200)
+//     yield npc.walkSouth(300)
+//     yield npc.walkEast(1500)
+//     yield npc.walkSouth(1500)
+//     yield npc.walkWest(2700)
+//     yield npc.walkNorth(400)
+
+// }
+
+// const walkMove = moveNPC()
+
+// walkMove.next()
+// walkMove.next()
+// walkMove.next()
+// walkMove.next()
+// walkMove.next()
+// walkMove.next()
+// walkMove.next()
+
 
 // Create the inventory
 const inventory = newInventory()
